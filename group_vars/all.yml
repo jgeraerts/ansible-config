@@ -1,0 +1,9 @@
+common_packages:
+  - zsh
+  - tmux
+  - git
+  - curl
+
+admin_users:
+  - username: jgeraert
+    state: present
