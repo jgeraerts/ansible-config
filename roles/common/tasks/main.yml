@@ -4,19 +4,3 @@
 - name: install packages
   apt:
     pkg: "{{ common_packages }}"
-
-- name: create users
-  user:
-    name: "{{ item.username }}"
-    groups: sudo
-    remove: true
-    password: $6$fjijfi2222f$44phmxjGnB8wp1yx580gOUj/uRzNRu1JVN1oniQkFkNAHTeIMo9mc/XMj5q/vznSv930/xrvrS2g.hbFQ4Yci1
-    state: "{{ item.state }}"
-  with_items: "{{ admin_users }}"
-
-- name: add administrative users' SSH keys
-  authorized_key:
-    user: "{{ item.username }}"
-    key: "{{ lookup('file', 'authorized_keys/' + item.username + '.keys') }}"
-  with_items: "{{ admin_users }}"
-  when: item.state == 'present'

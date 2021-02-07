@@ -1,10 +1,17 @@
-roles: []
+roles:
+  - ansible-users
 common_packages:
   - zsh
   - tmux
   - git
   - curl
 
-admin_users:
+users:
   - username: jgeraert
+    name: Jo Geraerts
     state: present
+    password: $6$fjijfi2222f$44phmxjGnB8wp1yx580gOUj/uRzNRu1JVN1oniQkFkNAHTeIMo9mc/XMj5q/vznSv930/xrvrS2g.hbFQ4Yci1
+    uid: 1000
+    groups: ['sudo', 'docker']
+    ssh_key:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/lTAMUHXcHaP5ds9+nrQPP4W57L0nBQvN9WOzRtNbyqPSp92N17jBwwvyljkjinaOjOEPSSx7FCRDcP8++VpKiejnGm2H7/+aIQ6lkj0x3dy88nSJthkD8ByDobBZhootvTuKzFnBodkCbE58q4/nqfwJFO9Fbka4Vb7JE7NSkrhTYMVtdUJxNwuxjTdGHdfZB+zouaM5De63qDe7rHJCv1WysHy+PBlxy4SmZ5B71fekiOoqgR/tuFvBaCV0hcH+6s7HCGR8Dqp2raM69Rp71JwzY+ayvtv5VtzU2k7oiKb6MlgkXXd3eU5pwEY6y/2lIwqbwV6rq6eYvmncTuRX imported-openssh-key
