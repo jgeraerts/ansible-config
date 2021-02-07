@@ -1,3 +1,4 @@
+roles: []
 common_packages:
   - zsh
   - tmux
